@@ -29,7 +29,7 @@
     return ans;
 }*/
 
-int findComplement(int num) {
+/*int findComplement(int num) {
     //use XOR
     unsigned int mask = 1;
     while(mask <= num){
@@ -37,8 +37,12 @@ int findComplement(int num) {
     }
     mask = mask - 1;
     return mask ^ num;
-}
+}*/
 
+int findComplement(int num) {
+    //use __builtin_clz
+    return num ^ ((1U << (sizeof(num) * 8 - __builtin_clz(num))) - 1);
+}
 int main(){
 	int num1 = 5;
 	printf("The complement of num1 is : %d\n",findComplement(num1));
