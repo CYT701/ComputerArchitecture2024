@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int findComplement(int num) {
+/*int findComplement(int num) {
     //convert num to binary and store in array
     int binaryarr[31] = {0};
     int end = 0;//the end of binary string
@@ -27,6 +27,16 @@ int findComplement(int num) {
         square = square << 1;
     }
     return ans;
+}*/
+
+int findComplement(int num) {
+    //use XOR
+    unsigned int power = 1;
+    while(power <= num){
+        power = power << 1;
+    }
+    power = power - 1;
+    return power ^ num;
 }
 
 int main(){
@@ -38,3 +48,4 @@ int main(){
 	printf("The complement of num3 is : %d\n",findComplement(num3));
 	return 0;
 }
+
