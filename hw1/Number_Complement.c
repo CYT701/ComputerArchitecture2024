@@ -31,12 +31,12 @@
 
 int findComplement(int num) {
     //use XOR
-    unsigned int power = 1;
-    while(power <= num){
-        power = power << 1;
+    unsigned int mask = 1;
+    while(mask <= num){
+        mask = mask << 1;
     }
-    power = power - 1;
-    return power ^ num;
+    mask = mask - 1;
+    return mask ^ num;
 }
 
 int main(){
