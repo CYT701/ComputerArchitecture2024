@@ -45,11 +45,11 @@ int findComplement(int num) {
 }
 int main(){
 	int num1 = 5;
-	printf("The complement of num1 is : %d\n",findComplement(num1));
+	printf("The complement of %d is %d\n",num1, findComplement(num1));
 	int num2 = 1;
-	printf("The complement of num2 is : %d\n",findComplement(num2));
+	printf("The complement of %d is %d\n",num2, findComplement(num2));
 	int num3 = 2147483647;
-	printf("The complement of num3 is : %d\n",findComplement(num3));
+	printf("The complement of %d is %d\n",num3, findComplement(num3));
 	return 0;
 }
 
