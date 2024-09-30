@@ -58,41 +58,41 @@ findComplement:
     or t0, t0, t1      
 # population count
     # x = x - ((x >> 1) & 0x55555555)
-    srli t1, t0, 1 
-    lui t2, 0x55555
-    addi t2, t2, 0x555  
-    and t1, t1, t2
-    sub t0, t0, t1
+    #srli t1, t0, 1 
+    #lui t2, 0x55555
+    #addi t2, t2, 0x555  
+    #and t1, t1, t2
+    #sub t0, t0, t1
     # x = ((x >> 2) & 0x33333333) + (x & 0x33333333)
-    srli t1, t0, 2
-    lui t2, 0x33333
-    addi t2, t2, 0x333
-    and t1, t1, t2
-    and t3, t0, t2
-    add t0, t1, t3
+    #srli t1, t0, 2
+    #lui t2, 0x33333
+    #addi t2, t2, 0x333
+    #and t1, t1, t2
+    #and t3, t0, t2
+    #add t0, t1, t3
     # x = ((x >> 4) + x) & 0x0f0f0f0f
-    srli t1, t0, 4
-    add t1, t0, t1
-    lui t2, 0x0f0f0
-    addi t2, t2, 0x7ff
-    addi t2, t2, 0x710
-    and t0, t1, t2
+    #srli t1, t0, 4
+    #add t1, t0, t1
+    #lui t2, 0x0f0f0
+    #addi t2, t2, 0x7ff
+    #addi t2, t2, 0x710
+    #and t0, t1, t2
     # x += (x >> 8)
-    srli t1, t0, 8
-    add t0, t0, t1
+    #srli t1, t0, 8
+    #add t0, t0, t1
     #x += (x >> 16)
-    srli t1, t0, 16
-    add t0, t0, t1
+    #srli t1, t0, 16
+    #add t0, t0, t1
     # return (32 - (x & 0x3f))
-    andi t1, t0, 0x3f
-    addi t2, zero, 32
-    sub t0, t2, t1 
+    #andi t1, t0, 0x3f
+    #addi t2, zero, 32
+    #sub t0, t2, t1 
     
-    sub t0, t2, t0
-    addi t1, zero, 1
-    sll t1, t1, t0
-    addi t1, t1, -1
-    xor a0, a0, t1
+    #sub t0, t2, t0
+    #addi t1, zero, 1
+    #sll t1, t1, t0
+    #addi t1, t1, -1
+    xor a0, a0, t0
     ret      
 #clz_while:
 #    slli t1, t1, 1      # mask = mask << 1
