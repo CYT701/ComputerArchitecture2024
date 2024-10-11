@@ -82,6 +82,7 @@ continue:
     ret  
 
 checkResult:
+	mv a1, a0
     beq a0, t1, pass
     la a0, str2
     li a7, 4
@@ -89,7 +90,7 @@ checkResult:
     la a0, str4
     li a7, 4
     ecall
-    mv a0, a0
+    mv a0, a1
     li a7, 34
     ecall
     la a0, str3
